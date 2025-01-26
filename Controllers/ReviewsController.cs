@@ -48,7 +48,7 @@ namespace PROG36944_Lab2.Controllers
         // GET: Reviews/Create
         public IActionResult Create()
         {
-            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Genre");
+            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Title");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace PROG36944_Lab2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Genre", review.BookID);
+            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Title", review.BookID);
             return View(review);
         }
 
@@ -82,7 +82,7 @@ namespace PROG36944_Lab2.Controllers
             {
                 return NotFound();
             }
-            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Genre", review.BookID);
+            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Title", review.BookID);
             return View(review);
         }
 
@@ -118,7 +118,7 @@ namespace PROG36944_Lab2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Genre", review.BookID);
+            ViewData["BookID"] = new SelectList(_context.Books, "BookID", "Title", review.BookID);
             return View(review);
         }
 

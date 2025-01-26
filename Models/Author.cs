@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PROG36944_Lab2.Models
 {
@@ -19,6 +20,12 @@ namespace PROG36944_Lab2.Models
         [MinLength(10)]
         [DisplayName("Author's Birth Date")]
         public string BirthDate { get; set; }
+        [NotMapped]
+        [DisplayName("Author's Full Name")]
+        public string FullName
+        {
+            get { return $"{FirstName} {LastName}"; }
+        }
 
     }
 }

@@ -48,7 +48,7 @@ namespace PROG36944_Lab2.Controllers
         // GET: Books/Create
         public IActionResult Create()
         {
-            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "BirthDate");
+            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "FullName");
             return View();
         }
 
@@ -65,7 +65,7 @@ namespace PROG36944_Lab2.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "BirthDate", book.AuthorID);
+            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "FullName", book.AuthorID);
             return View(book);
         }
 
@@ -82,7 +82,7 @@ namespace PROG36944_Lab2.Controllers
             {
                 return NotFound();
             }
-            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "BirthDate", book.AuthorID);
+            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "FullName", book.AuthorID);
             return View(book);
         }
 
@@ -118,7 +118,7 @@ namespace PROG36944_Lab2.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "BirthDate", book.AuthorID);
+            ViewData["AuthorID"] = new SelectList(_context.Authors, "AuthorID", "FullName", book.AuthorID);
             return View(book);
         }
 
