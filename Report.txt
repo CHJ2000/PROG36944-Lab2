@@ -1,0 +1,5 @@
+To create this web app I created three models Author, Book and Review. Each corresponds to a table in the database. I defined each model with data annotations to manage the relationships between the models.
+
+The Author table stores information about authors with columns AuthorID, FirstName, LastName,and BirthDate. The Book table stores information about books with columns BookID, Title, PublishedYear, Genre, and the foreign key AuthorID that references the Author table. The Review table stores reviews for books with columns ReviewID, foreign key BookID that references the Book table, ReviewerName, Rating, and Comment. I used DbSet to create lists of Authors, Books, and Reviews.
+
+I used the UI to test the scaffolding that I created to perform the CRUD operations. I tested each view and each operation to ensure that the correct information was being shown. Such as the details for the Book included the correct Author from the Author table, or that the Review showed the correct Book from the Book table.

@@ -6,7 +6,7 @@ namespace PROG36944_Lab2.Models
 {
     public class Author
     {
-        [Key]
+        [Key] //Primary Key for Author table
         public int AuthorID { get; set; }
         [Required]
         [Length(2, 25)]
@@ -21,8 +21,8 @@ namespace PROG36944_Lab2.Models
         [DisplayName("Author's Birth Date")]
         public string BirthDate { get; set; }
         [NotMapped]
-        [DisplayName("Author's Full Name")]
-        public string FullName
+        [DisplayName("Author's Full Name")] 
+        public string FullName // method to return the Authors full name
         {
             get { return $"{FirstName} {LastName}"; }
         }

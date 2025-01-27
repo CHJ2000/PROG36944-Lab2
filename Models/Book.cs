@@ -7,7 +7,7 @@ namespace PROG36944_Lab2.Models
 {
     public class Book
     {
-        [Key]
+        [Key] // primary key for Book table 
         public int BookID { get; set; }
         [Required]
         [Length(2,255)]
@@ -21,7 +21,7 @@ namespace PROG36944_Lab2.Models
         [Length(4,20)]
         [DisplayName("Book Genre")]
         public string Genre { get; set; }
-        [ForeignKey("Author")]
+        [ForeignKey("Author")] // foreign key referencing Author table
         public int AuthorID { get; set; }
         [ValidateNever]
         public Author Author { get; set; }

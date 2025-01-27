@@ -7,9 +7,9 @@ namespace PROG36944_Lab2.Models
 {
     public class Review
     {
-        [Key]
+        [Key] // primary key for Review table
         public int ReviewID { get; set; }
-        [ForeignKey("Book")]
+        [ForeignKey("Book")] //foreign key referencing Book table
         public int BookID { get; set; }
         [Required]
         [Length(2,50)]
